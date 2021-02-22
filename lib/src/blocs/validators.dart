@@ -3,8 +3,6 @@ import 'dart:async';
 class Validators {
   final validateEmail = StreamTransformer<String, String>.fromHandlers(
     handleData: (email, sink) {
-      print('email: $email');
-
       if (email.contains('@')) {
         sink.add(email);
       } else {
@@ -15,8 +13,6 @@ class Validators {
 
   final validatePassword = StreamTransformer<String, String>.fromHandlers(
     handleData: (password, sink) {
-      print('password: $password, password.lengh: ${password.length}');
-
       if (password.length > 3) {
         sink.add(password);
       } else {

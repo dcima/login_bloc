@@ -23,6 +23,8 @@ class LoginScreen extends StatelessWidget {
       stream: bloc.email,
       builder: (context, snapshot) {
         return TextField(
+          autofocus: true,  
+          textInputAction: TextInputAction.next,
           onChanged: bloc.changeEmail,
           keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
@@ -40,6 +42,7 @@ class LoginScreen extends StatelessWidget {
       stream: bloc.password,
       builder: (context, snapshot) {
         return TextField(
+          textInputAction: TextInputAction.next,
           onChanged: bloc.changePassword,
           obscureText: true,
           decoration: InputDecoration(
@@ -53,7 +56,7 @@ class LoginScreen extends StatelessWidget {
   }
 
   Widget submitButton() {
-    return RaisedButton(
+    return RaisedButton(    
       child: Text('Login'),
       color: Colors.blue,
       onPressed: () {},
