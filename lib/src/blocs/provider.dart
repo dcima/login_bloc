@@ -3,7 +3,9 @@ import 'bloc.dart';
 
 class Provider extends InheritedWidget {
   final bloc = Bloc();
-  bool updateShoudlNotify = true;
+  final bool updateShoudlNotify = true;
+
+  Provider({Key key, Widget child}) : super(key: key, child: child);
 
   static Bloc of(BuildContext context) {
     // ignore: deprecated_member_use
@@ -13,7 +15,6 @@ class Provider extends InheritedWidget {
 
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
-    // TODO: implement updateShouldNotify
-    throw UnimplementedError();
+    return true;
   }
 }
