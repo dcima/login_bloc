@@ -7,7 +7,8 @@ class Provider extends InheritedWidget {
 
   static Bloc of(BuildContext context) {
     // ignore: deprecated_member_use
-    return (context.inheritFromWidgetOfExactType(Provider) as Provider).bloc;
+    return (context.dependOnInheritedWidgetOfExactType<Provider>() as Provider)
+        .bloc;
   }
 
   @override
